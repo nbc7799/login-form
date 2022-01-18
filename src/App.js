@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import styles from "./app.module.css";
 
 function App() {
+  const idRef = useRef();
+  const passwordRef = useRef();
+
+  const onLogin = () => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className={styles.loginBox}>
+      <div className={styles.logo}>LOGO DESIGN</div>
+      <div className={styles.inputBox}>
+        <input ref={idRef} type="text" placeholder="UserName" />
+        <input ref={passwordRef} type="text" placeholder="PassWord" />
+      </div>
+      <button type="button" className={styles.button} onClick={onLogin}>
+        Button
+      </button>
+    </section>
   );
 }
 
